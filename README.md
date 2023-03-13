@@ -10,6 +10,10 @@ Depoyment of containers:
 docker-compose -f docker-compose.yaml up -d
 ~~~
 
+## Interfaces:
+---
+* [Kafka Ui](http://127.0.0.1:8082)
+
 
 ## Technologies
 ---
