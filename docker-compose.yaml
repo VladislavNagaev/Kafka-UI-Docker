@@ -1,0 +1,29 @@
+---
+version: "3.8"
+
+
+services:
+
+  kafka-ui:
+    image: provectuslabs/kafka-ui:v0.6.0
+    container_name: kafka-ui
+    hostname: kafka-ui
+    ports:
+      - target: 8080
+        published: 8082
+        mode: host
+    environment:
+      KAFKA_CLUSTERS_0_BOOTSTRAP_SERVERS: "kafka:9092"
+      # 16 bytes of a base64-encoded UUID
+      KAFKA_CLUSTERS_0_NAME: "OiY16813QnOWGJwZ9eX0YQ"
+    networks:
+      - main-network
+    restart: always
+
+
+networks:
+  main-network:
+    name: main-network
+    external: false
+    driver: bridge
+    attachable: false
